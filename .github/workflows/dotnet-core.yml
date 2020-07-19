@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Setup Dotnet 2.2.300
-    - uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '2.2.300'
     - name: 'run build'
