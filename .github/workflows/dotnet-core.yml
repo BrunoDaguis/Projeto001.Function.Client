@@ -1,0 +1,25 @@
+name: Pipeline Projeto 001 Client
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: Setup Dotnet 2.2.300
+      with:
+        dotnet-version: '2.2.300'
+    - name: 'run build'
+      run: |
+        pushd .
+        dotnet build --configuration Release --output ./output
+        popd
+    - uses: Azure/functions-action@v1
+      id: fa
+      with:
+        app-name: Projeto001FunctionClient
+        publish-profile: ${{ secrets.SCM_CREDENTIALS }}
