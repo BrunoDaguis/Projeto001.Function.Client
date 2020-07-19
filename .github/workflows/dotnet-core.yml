@@ -11,10 +11,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - name: Setup Dotnet 2.2.300
+    - name: Setup Dotnet 3.0.103
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '2.2.300'
+        dotnet-version: '3.0.103'
     - name: 'run build'
       run: dotnet build --configuration Release
 
