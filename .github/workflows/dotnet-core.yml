@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: Setup Dotnet 2.2.300
+
+    - name: Setup Dotnet 2.2.300
+    - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '2.2.300'
     - name: 'run build'
