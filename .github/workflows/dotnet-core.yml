@@ -16,10 +16,8 @@ jobs:
       with:
         dotnet-version: '2.2.300'
     - name: 'run build'
-      run: |
-        pushd .
-        dotnet build --configuration Release --output ./output
-        popd
+      run: dotnet build --configuration Release
+
     - uses: Azure/functions-action@v1
       id: fa
       with:
